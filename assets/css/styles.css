@@ -1,0 +1,144 @@
+:root {
+  --primary-clr: #022c43;
+  --secondary-clr: #ffd700;
+  --accent-clr-1: #053f5e;
+  --accent-clr-2: #115173;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+header {
+  background: rgb(255, 215, 0);
+  background: linear-gradient(
+    180deg,
+    var(--secondary-clr) 0%,
+    var(--accent-clr-1) 100%
+  );
+  padding: 10px 40px 50px 40px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header div h1 {
+  font-size: 3.5rem;
+  position: relative;
+  top: -45px;
+}
+
+header div h1:nth-child(2) {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  visibility: hidden;
+}
+
+header div h1 span {
+  position: absolute;
+}
+
+#bran {
+  clip-path: inset(0% 0% 27% 0%);
+  left: 0px;
+  top: 0px;
+}
+
+#james {
+  color: var(--accent-clr-2);
+  clip-path: inset(50% -1% -5% -15%);
+  left: 60px;
+  top: 17px;
+  text-shadow: 1px 1px black;
+}
+
+#headspace {
+  background-color: black;
+  border-radius: 25% 50% 25% 50%;
+  height: 5px;
+  width: 20rem;
+  position: absolute;
+  top: 52px;
+  z-index: 1;
+}
+
+#web {
+  color: var(--accent-clr-2);
+  clip-path: inset(0% 0% 27% 0%);
+  top: 0px;
+  left: 205px;
+  text-shadow: 1px 1px black;
+}
+
+#dev {
+  clip-path: inset(52% -1% -5% -15%);
+  left: 248px;
+  top: 17px;
+}
+
+header div nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header div nav ul li {
+  display: inline;
+  font-size: 2.2rem;
+  padding: 0 15px;
+}
+
+header div nav ul li:first-child {
+  margin-left: 0;
+}
+
+main {
+  background-color: var(--accent-clr-1);
+}
+
+section {
+  padding: 20px 0;
+}
+
+section h2,
+p {
+  color: var(--secondary-clr);
+}
+
+footer {
+  background: rgb(255, 215, 0);
+  background: linear-gradient(
+    180deg,
+    var(--accent-clr-1) 0%,
+    var(--secondary-clr) 100%
+  );
+  padding: 10px 40px;
+}
+
+footer p {
+  color: var(--accent-clr-1);
+  font-size: 1.4rem;
+  text-align: center;
+}

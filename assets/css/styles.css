@@ -15,6 +15,10 @@
 
 /* General selectors */
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--primary-clr);
   background: linear-gradient(
@@ -423,7 +427,7 @@ header h1 span {
   /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
 
   #projects article {
-    grid-template-columns: repeat(2, 45%);
+    grid-template-columns: repeat(2, 43%);
     grid-template-rows: repeat(5, 13%);
     grid-gap: 45px;
     margin-bottom: -400px;
@@ -440,6 +444,6 @@ header h1 span {
 
   .smaller-project-caption {
     width: 99%;
-    bottom: 100px;
+    bottom: 135px;
   }
 }

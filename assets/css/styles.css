@@ -168,13 +168,12 @@ section:before {
 .big-project-image {
   border: solid 1px var(--secondary-clr);
   border-radius: 2%;
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  opacity: 1;
   width: 100%;
 }
 
 .big-project-caption {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
   font-size: 1.1rem;
   position: relative;
   bottom: 120px;
@@ -183,35 +182,29 @@ section:before {
   width: 99.6%;
 }
 
-#projects article div:hover a .big-project-image {
-  opacity: 1;
+#projects article div {
+  transition: opacity 0.3s;
 }
 
-.smaller-project {
-  border-radius: 5%;
-  transition: opacity 0.3s;
+#projects article div:hover {
+  opacity: 0.85;
 }
 
 .smaller-project-image {
   border: solid 1px var(--secondary-clr);
   border-radius: 5%;
-  opacity: 0.5;
-  transition: opacity 0.3s;
+  opacity: 1;
   width: 100%;
 }
 
 .smaller-project-caption {
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.85);
   font-size: 1rem;
   position: relative;
   bottom: 115px;
   left: 1px;
   padding: 5px 10px;
   width: 99.5%;
-}
-
-#projects article div:hover a .smaller-project-image {
-  opacity: 1;
 }
 
 /* Contact section styles */

@@ -72,7 +72,7 @@ header nav ul {
 header nav ul li {
   display: inline;
   font-size: 2rem;
-  padding: 0 10px;
+  padding-right: 15px;
 }
 
 header nav ul li a {
@@ -381,13 +381,26 @@ header h1 span {
   }
 
   header {
-    padding: 0px;
+    padding: 25px 0 0 0;
+  }
+
+  header h1 span {
+    display: none;
+  }
+
+  #headspace {
+    display: none;
+  }
+
+  header h1:nth-child(2) {
+    color: var(--primary-clr);
+    visibility: visible;
   }
 
   header nav ul li {
-    font-size: 1.5rem;
-    margin-top: 15px;
-    padding-right: 5px;
+    font-size: 1.4rem;
+    margin-top: -15px;
+    padding-right: 3px;
   }
 
   section {

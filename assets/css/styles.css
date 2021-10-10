@@ -183,7 +183,7 @@ section article {
 .big-project-image {
   border: solid 1px var(--secondary-clr);
   border-radius: 2%;
-  opacity: 0.75;
+  opacity: 0.65;
   width: 515px;
   transition: opacity 0.3s;
 }
@@ -195,23 +195,22 @@ section article {
   bottom: 120px;
   left: 1px;
   padding: 5px 10px;
-  width: 448px;
+  width: 513px;
 }
 
-#projects article div:hover .big-project-image {
+#projects article div:hover a .big-project-image {
   opacity: 1;
 }
 
 .smaller-project {
   border-radius: 5%;
-  opacity: 0.75;
   transition: opacity 0.3s;
 }
 
 .smaller-project-image {
   border: solid 1px var(--secondary-clr);
   border-radius: 5%;
-  opacity: 0.75;
+  opacity: 0.65;
   width: 250px;
   transition: opacity 0.3s;
 }
@@ -226,7 +225,7 @@ section article {
   width: 248px;
 }
 
-#projects article div:hover .smaller-project-image {
+#projects article div:hover a .smaller-project-image {
   opacity: 1;
 }
 

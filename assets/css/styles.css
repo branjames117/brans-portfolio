@@ -382,6 +382,7 @@ header h1 span {
       var(--primary-clr) 96%,
       var(--secondary-clr) 100%
     );
+    font-size: 1rem;
   }
 
   header {
@@ -429,7 +430,7 @@ header h1 span {
   #projects article {
     grid-template-columns: repeat(2, 43%);
     grid-template-rows: repeat(5, 13%);
-    grid-gap: 45px;
+    grid-gap: 32px;
     margin-bottom: -400px;
   }
 
@@ -443,7 +444,8 @@ header h1 span {
   }
 
   .smaller-project-caption {
-    width: 99%;
     bottom: 135px;
+    font-size: 0.7rem;
+    width: 99%;
   }
 }

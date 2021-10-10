@@ -20,6 +20,7 @@
 body {
   background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
 }
 
 a {
@@ -128,7 +129,9 @@ section article {
   border: solid 1px var(--secondary-clr);
   border-radius: 5%;
   margin: 0 20px;
-  width: 300px;
+  width: 250px;
+  float: right;
+  display: inline;
 }
 
 #about article span p {
@@ -140,10 +143,9 @@ section article {
 
 #projects article {
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 50px;
   grid-template-columns: repeat(3, 250px);
   grid-template-rows: repeat(3, 250px);
-  margin-left: 20px;
 }
 
 .big-project {
@@ -157,12 +159,13 @@ section article {
   border: solid 1px var(--secondary-clr);
   border-radius: 2%;
   opacity: 0.75;
-  width: 520px;
+  width: 550px;
   transition: opacity 0.3s;
 }
 
 .big-project-caption {
   background-color: rgba(0, 0, 0, 0.75);
+  font-size: 1.1rem;
   position: relative;
   bottom: 120px;
   left: 1px;
@@ -192,6 +195,7 @@ section article {
 
 .smaller-project-caption {
   background-color: rgba(0, 0, 0, 0.75);
+  font-size: 1rem;
   position: relative;
   bottom: 115px;
   left: 1px;
@@ -201,6 +205,21 @@ section article {
 
 #projects article div:hover .smaller-project-image {
   opacity: 1;
+}
+
+/* Contact section styles */
+
+#contact article ul {
+  list-style-type: none;
+}
+
+#contact article ul li {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+#contact article ul li span {
+  width: 150px;
 }
 
 /* Footer styles */

@@ -17,7 +17,14 @@
 /* General selectors */
 
 body {
-  background: var(--accent-clr-1);
+  background: rgb(255, 215, 0);
+  background: linear-gradient(
+    180deg,
+    var(--secondary-clr) 0%,
+    var(--accent-clr-1) 4%,
+    var(--accent-clr-1) 96%,
+    var(--secondary-clr) 100%
+  );
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
 }
@@ -35,65 +42,52 @@ a:hover {
 /* See IDs below for split-text effect */
 
 header {
-  background: rgb(255, 215, 0);
-  background: linear-gradient(
-    180deg,
-    var(--secondary-clr) 0%,
-    var(--accent-clr-1) 100%
-  );
-  padding: 10px 80px 50px 80px;
-}
-
-header div {
+  padding: 10px 0px 50px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-header div h1 {
+header h1 {
   font-size: 3.5rem;
   position: relative;
   top: -45px;
 }
 
-header div h1:nth-child(2) {
+header h1:nth-child(2) {
   display: inline-block;
   position: relative;
   white-space: nowrap;
   visibility: hidden;
 }
 
-header div h1 span {
+header h1 span {
   position: absolute;
 }
 
-header div nav {
-  padding-right: 25px;
-}
-
-header div nav ul {
+header nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
-header div nav ul li {
+header nav ul li {
   display: inline;
   font-size: 2rem;
   padding: 0 10px;
 }
 
-header div nav ul li:first-child {
+header nav ul li:first-child {
   margin-left: 0;
 }
 
-header div nav ul li a {
+header nav ul li a {
   text-decoration: none;
   transition: opacity 0.2s;
 }
 
-header div nav ul li a:hover {
+header nav ul li a:hover {
   text-decoration: none;
   opacity: 0.5;
 }
@@ -101,8 +95,7 @@ header div nav ul li a:hover {
 /* Main and section styles */
 
 main {
-  background-color: var(--accent-clr-1);
-  padding: 20px 0 100px 0;
+  padding: 60px 0 100px 0;
 }
 
 section {
@@ -269,12 +262,6 @@ section article {
 /* Footer styles */
 
 footer {
-  background: rgb(255, 215, 0);
-  background: linear-gradient(
-    180deg,
-    var(--accent-clr-1) 0%,
-    var(--secondary-clr) 100%
-  );
   padding: 80px 40px 10px 40px;
 }
 
@@ -336,19 +323,19 @@ footer p {
 /* Styles for medium-sized screens of < 980px */
 
 @media screen and (max-width: 980px) {
-  header div {
+  header {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
   }
 
-  header div h1 {
+  header h1 {
     margin-top: 45px;
     margin-bottom: -45px;
   }
 
-  header div nav ul li {
+  header nav ul li {
     padding-right: 0px;
   }
 
@@ -357,8 +344,9 @@ footer p {
   }
 
   #projects article {
-    grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(5, 300px);
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(5, 16%);
+    margin-bottom: -300px;
   }
 
   .big-project-image {
@@ -366,7 +354,7 @@ footer p {
   }
 
   .big-project-caption {
-    width: 613px;
+    width: 99.7%;
   }
 
   .smaller-project-image {
@@ -374,25 +362,15 @@ footer p {
   }
 
   .smaller-project-caption {
-    width: 298px;
+    width: 99.2%;
   }
 }
 
 /* Styles for smaller screens like tablets < 768px */
 
 @media screen and (max-width: 784px) {
-  #projects article {
-    grid-template-columns: repeat(2, 200px);
-    grid-template-rows: repeat(5, 200px);
-  }
-
-  .big-project-caption {
-    width: 413px;
-  }
-
   .smaller-project-caption {
     font-size: 0.8rem;
-    width: 198px;
   }
 }
 
@@ -404,22 +382,24 @@ footer p {
     font-size: 1.5rem;
   }
 
+  section {
+    display: flex;
+    flex-direction: column;
+  }
+
   .side-wall {
-    width: 0;
+    display: none;
   }
 
   #profile-image {
     width: 150px;
   }
 
-  #projects {
-    height: 900px;
-  }
-
   #projects article {
-    grid-template-columns: repeat(2, 40%);
+    grid-template-columns: repeat(2, 45%);
     grid-template-rows: repeat(5, 13%);
-    grid-gap: 5px;
+    grid-gap: 45px;
+    margin-bottom: -400px;
   }
 
   .big-project-caption {

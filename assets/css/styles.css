@@ -9,9 +9,9 @@
 /* Universal reset */
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 /* General selectors */
@@ -19,18 +19,21 @@
 body {
   background: rgb(255, 215, 0);
   background: linear-gradient(
-    180deg,
+    -180deg,
     var(--secondary-clr) 0%,
     var(--accent-clr-1) 4%,
     var(--accent-clr-1) 96%,
     var(--secondary-clr) 100%
   );
+  color: var(--secondary-clr);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
+  line-height: 1.4;
 }
 
 a {
   color: inherit;
+  opacity: 1;
   transition: opacity 0.2s;
 }
 
@@ -42,10 +45,10 @@ a:hover {
 /* See IDs below for split-text effect */
 
 header {
-  padding: 10px 0px 50px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 10px 0px 50px 30px;
 }
 
 header h1 {
@@ -54,22 +57,11 @@ header h1 {
   top: -45px;
 }
 
-header h1:nth-child(2) {
-  display: inline-block;
-  position: relative;
-  white-space: nowrap;
-  visibility: hidden;
-}
-
-header h1 span {
-  position: absolute;
-}
-
 header nav ul {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  list-style: none;
 }
 
 header nav ul li {
@@ -78,21 +70,27 @@ header nav ul li {
   padding: 0 10px;
 }
 
-header nav ul li:first-child {
-  margin-left: 0;
-}
-
 header nav ul li a {
+  color: var(--accent-clr-1);
   text-decoration: none;
   transition: opacity 0.2s;
 }
 
 header nav ul li a:hover {
-  text-decoration: none;
   opacity: 0.5;
+  text-decoration: none;
 }
 
-/* Main and section styles */
+/* Invisible h1 to enforce spacing against navbar */
+
+header h1:nth-child(2) {
+  display: inline-block;
+  position: relative;
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+/* Main and general section styles */
 
 main {
   padding: 60px 0 100px 0;
@@ -101,24 +99,32 @@ main {
 section {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
   padding: 20px 0 80px 0;
 }
 
-section::before {
-  content: '';
-  margin: 0 auto;
-  width: 100%;
-  height: 1px;
-  background-color: var(--secondary-clr);
-  position: relative;
-  bottom: 20px;
+section h2 {
+  flex: 1.2;
 }
 
-section h2 {
-  flex: 1.1;
+section article {
+  flex: 10;
 }
+
+/* Horizontal rule above each section */
+
+section::before {
+  content: '';
+  background-color: var(--secondary-clr);
+  bottom: 20px;
+  height: 1px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+}
+
+/* Vertical rule between each section h2 and article */
 
 .side-wall {
   background-color: var(--secondary-clr);
@@ -127,37 +133,18 @@ section h2 {
   height: 250px;
 }
 
-section h2,
-article {
-  color: var(--secondary-clr);
-}
-
-section article {
-  flex: 10;
-}
-
-/* About section */
-
-#about article {
-  display: flex;
-  justify-content: flex-start;
-}
+/* About section styles */
 
 #profile-image {
   border: solid 1px var(--secondary-clr);
   border-radius: 5%;
-  margin: 0 20px;
-  width: 250px;
-  float: right;
   display: inline;
+  float: right;
+  margin: 5px 20px;
+  width: 250px;
 }
 
-#about article span p {
-  line-height: 1.4;
-  margin-bottom: 20px;
-}
-
-/* Projects section with grid template */
+/* Projects section styles with grid template */
 
 #projects article {
   display: grid;
@@ -177,8 +164,8 @@ section article {
   border: solid 1px var(--secondary-clr);
   border-radius: 2%;
   opacity: 0.65;
-  width: 515px;
   transition: opacity 0.3s;
+  width: 100%;
 }
 
 .big-project-caption {
@@ -188,7 +175,7 @@ section article {
   bottom: 120px;
   left: 1px;
   padding: 5px 10px;
-  width: 513px;
+  width: 99.7%;
 }
 
 #projects article div:hover a .big-project-image {
@@ -204,8 +191,8 @@ section article {
   border: solid 1px var(--secondary-clr);
   border-radius: 5%;
   opacity: 0.65;
-  width: 250px;
   transition: opacity 0.3s;
+  width: 100%;
 }
 
 .smaller-project-caption {
@@ -215,7 +202,7 @@ section article {
   bottom: 115px;
   left: 1px;
   padding: 5px 10px;
-  width: 248px;
+  width: 99.5%;
 }
 
 #projects article div:hover a .smaller-project-image {
@@ -247,10 +234,6 @@ section article {
   margin: 35px 0 10px 0;
 }
 
-#resume article p {
-  line-height: 1.4;
-}
-
 #resume article ul {
   margin-left: 45px;
 }
@@ -262,7 +245,7 @@ section article {
 /* Footer styles */
 
 footer {
-  padding: 80px 40px 10px 40px;
+  padding: 150px 40px 10px 40px;
 }
 
 footer p {
@@ -271,24 +254,29 @@ footer p {
   text-align: center;
 }
 
-/* Container class to create left-right space on larger screens */
+/* Container class to create left-right spacing on larger screens */
 
 .container {
   margin: 0 auto;
   width: 920px;
 }
 
-/* IDs to create split-text effect in header */
+/* Create split-text effect in header */
+
+header h1 span {
+  position: absolute;
+}
 
 #bran {
-  clip-path: inset(0% 0% 27% 0%);
+  clip-path: inset(0% 0% 31% 0%);
+  color: black;
   left: 0px;
   top: 0px;
 }
 
 #james {
-  color: var(--primary-clr);
   clip-path: inset(50% -1% -5% -15%);
+  color: var(--primary-clr);
   left: 60px;
   top: 17px;
   text-shadow: 1px 1px black;
@@ -298,22 +286,23 @@ footer p {
   background-color: black;
   border-radius: 25% 50% 25% 50%;
   height: 5px;
-  width: 20rem;
   position: absolute;
   top: 52px;
+  width: 22rem;
   z-index: 1;
 }
 
 #web {
   color: var(--primary-clr);
   clip-path: inset(0% 0% 27% 0%);
-  top: 0px;
   left: 205px;
+  top: 0px;
   text-shadow: 1px 1px black;
 }
 
 #dev {
-  clip-path: inset(52% -1% -5% -15%);
+  color: black;
+  clip-path: inset(50% -1% -5% -15%);
   left: 248px;
   top: 17px;
 }
@@ -325,23 +314,29 @@ footer p {
 @media screen and (max-width: 980px) {
   header {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
     justify-content: flex-end;
   }
 
   header h1 {
-    margin-top: 45px;
-    margin-bottom: -45px;
+    margin: 27px 0 -37px 0;
   }
 
   header nav ul li {
-    padding-right: 0px;
+    margin-top: 5px;
+    padding-right: 15px;
+  }
+
+  header nav ul li a {
+    color: black;
   }
 
   .container {
     width: 95vw;
   }
+
+  /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
 
   #projects article {
     grid-template-columns: repeat(2, 45%);
@@ -377,14 +372,18 @@ footer p {
 /* Styles for very small screens, mobile phones < 575px */
 
 @media screen and (max-width: 575px) {
-  header div nav ul li {
-    margin-top: 15px;
+  header nav ul li {
     font-size: 1.5rem;
+    margin-top: 15px;
   }
 
   section {
     display: flex;
     flex-direction: column;
+  }
+
+  section h2 {
+    margin-bottom: 15px;
   }
 
   .side-wall {
@@ -394,6 +393,8 @@ footer p {
   #profile-image {
     width: 150px;
   }
+
+  /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
 
   #projects article {
     grid-template-columns: repeat(2, 45%);
@@ -408,6 +409,6 @@ footer p {
 
   .smaller-project-caption {
     width: 99%;
-    bottom: 150px;
+    bottom: 100px;
   }
 }

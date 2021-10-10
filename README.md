@@ -26,7 +26,7 @@ Upload HTML source code and asset files to hosting service such as GitHub Pages.
 
 The landing page is hosted [here](https://branjames117.github.io/brans-portfolio/).
 
-![Screenshot](./assets/images/screenshot.png)
+![Screenshot](./assets/images/screenshot.jpg)
 
 ## Credits
 

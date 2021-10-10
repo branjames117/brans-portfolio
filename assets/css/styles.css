@@ -1,3 +1,5 @@
+/* Variables */
+
 :root {
   --primary-clr: #022c43;
   --secondary-clr: #ffd700;
@@ -5,11 +7,15 @@
   --accent-clr-2: #115173;
 }
 
+/* Universal reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* General selectors */
 
 body {
   background-color: white;
@@ -17,14 +23,11 @@ body {
 }
 
 a {
-  text-decoration: none;
   color: inherit;
 }
 
-.container {
-  margin: 0 auto;
-  width: 1000px;
-}
+/* Header styles */
+/* See IDs below for split-text effect */
 
 header {
   background: rgb(255, 215, 0);
@@ -58,6 +61,174 @@ header div h1:nth-child(2) {
 header div h1 span {
   position: absolute;
 }
+
+header div nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+header div nav ul li {
+  display: inline;
+  font-size: 2.2rem;
+  padding: 0 15px;
+}
+
+header div nav ul li:first-child {
+  margin-left: 0;
+}
+
+header div nav ul li a {
+  text-decoration: none;
+}
+
+/* Main and section styles */
+
+main {
+  background-color: var(--accent-clr-1);
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px 0 80px 0;
+}
+
+section h2 {
+  flex: 1.1;
+}
+
+.side-wall {
+  background-color: var(--secondary-clr);
+  margin: 0 15px;
+  width: 1px;
+  height: 200px;
+}
+
+section h2,
+article {
+  color: var(--secondary-clr);
+}
+
+section article {
+  flex: 10;
+}
+
+/* About section */
+
+#about article {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#profile-image {
+  border: solid 1px var(--secondary-clr);
+  border-radius: 5%;
+  margin: 0 20px;
+  width: 300px;
+}
+
+#about article span p {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* Projects section with grid template */
+
+#projects article {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 250px);
+  grid-template-rows: repeat(3, 250px);
+  margin-left: 20px;
+}
+
+.big-project {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.big-project-image {
+  border: solid 1px var(--secondary-clr);
+  border-radius: 2%;
+  opacity: 0.75;
+  width: 520px;
+  transition: opacity 0.3s;
+}
+
+.big-project-caption {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  bottom: 120px;
+  left: 1px;
+  padding: 5px 10px;
+  width: 518px;
+}
+
+#projects article div:hover .big-project-image {
+  opacity: 1;
+}
+
+.smaller-project {
+  border: solid 1px var(--secondary-clr);
+  border-radius: 5%;
+  opacity: 0.75;
+  width: 250px;
+  transition: opacity 0.3s;
+}
+
+.smaller-project-image {
+  border: solid 1px var(--secondary-clr);
+  border-radius: 5%;
+  opacity: 0.75;
+  width: 250px;
+  transition: opacity 0.3s;
+}
+
+.smaller-project-caption {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: relative;
+  bottom: 115px;
+  left: 1px;
+  padding: 5px 10px;
+  width: 248px;
+}
+
+#projects article div:hover .smaller-project-image {
+  opacity: 1;
+}
+
+/* Footer styles */
+
+footer {
+  background: rgb(255, 215, 0);
+  background: linear-gradient(
+    180deg,
+    var(--accent-clr-1) 0%,
+    var(--secondary-clr) 100%
+  );
+  padding: 10px 40px;
+}
+
+footer p {
+  color: var(--accent-clr-1);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Container class to create left-right space on larger screens */
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+}
+
+/* IDs to create split-text effect in header */
 
 #bran {
   clip-path: inset(0% 0% 27% 0%);
@@ -95,50 +266,4 @@ header div h1 span {
   clip-path: inset(52% -1% -5% -15%);
   left: 248px;
   top: 17px;
-}
-
-header div nav ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-header div nav ul li {
-  display: inline;
-  font-size: 2.2rem;
-  padding: 0 15px;
-}
-
-header div nav ul li:first-child {
-  margin-left: 0;
-}
-
-main {
-  background-color: var(--accent-clr-1);
-}
-
-section {
-  padding: 20px 0;
-}
-
-section h2,
-p {
-  color: var(--secondary-clr);
-}
-
-footer {
-  background: rgb(255, 215, 0);
-  background: linear-gradient(
-    180deg,
-    var(--accent-clr-1) 0%,
-    var(--secondary-clr) 100%
-  );
-  padding: 10px 40px;
-}
-
-footer p {
-  color: var(--accent-clr-1);
-  font-size: 1.4rem;
-  text-align: center;
 }

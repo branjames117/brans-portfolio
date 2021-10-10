@@ -1,10 +1,9 @@
 /* Variables */
 
 :root {
-  --primary-clr: #022c43;
+  --primary-clr: #115173;
   --secondary-clr: #ffd700;
   --accent-clr-1: #053f5e;
-  --accent-clr-2: #115173;
 }
 
 /* Universal reset */
@@ -18,13 +17,18 @@
 /* General selectors */
 
 body {
-  background-color: white;
+  background: var(--accent-clr-1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
 }
 
 a {
   color: inherit;
+  transition: opacity 0.2s;
+}
+
+a:hover {
+  opacity: 0.8;
 }
 
 /* Header styles */
@@ -37,7 +41,7 @@ header {
     var(--secondary-clr) 0%,
     var(--accent-clr-1) 100%
   );
-  padding: 10px 40px 50px 40px;
+  padding: 10px 80px 50px 80px;
 }
 
 header div {
@@ -63,6 +67,10 @@ header div h1 span {
   position: absolute;
 }
 
+header div nav {
+  padding-right: 25px;
+}
+
 header div nav ul {
   list-style: none;
   display: flex;
@@ -72,8 +80,8 @@ header div nav ul {
 
 header div nav ul li {
   display: inline;
-  font-size: 2.2rem;
-  padding: 0 15px;
+  font-size: 2rem;
+  padding: 0 10px;
 }
 
 header div nav ul li:first-child {
@@ -82,6 +90,12 @@ header div nav ul li:first-child {
 
 header div nav ul li a {
   text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+header div nav ul li a:hover {
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 /* Main and section styles */
@@ -115,9 +129,9 @@ section h2 {
 
 .side-wall {
   background-color: var(--secondary-clr);
-  margin: 0 15px;
+  margin: -40px 15px;
   width: 1px;
-  height: 200px;
+  height: 250px;
 }
 
 section h2,
@@ -154,7 +168,7 @@ section article {
 
 #projects article {
   display: grid;
-  grid-gap: 50px;
+  grid-gap: 15px;
   grid-template-columns: repeat(3, 250px);
   grid-template-rows: repeat(3, 250px);
 }
@@ -170,7 +184,7 @@ section article {
   border: solid 1px var(--secondary-clr);
   border-radius: 2%;
   opacity: 0.75;
-  width: 550px;
+  width: 515px;
   transition: opacity 0.3s;
 }
 
@@ -181,7 +195,7 @@ section article {
   bottom: 120px;
   left: 1px;
   padding: 5px 10px;
-  width: 518px;
+  width: 448px;
 }
 
 #projects article div:hover .big-project-image {
@@ -189,10 +203,8 @@ section article {
 }
 
 .smaller-project {
-  border: solid 1px var(--secondary-clr);
   border-radius: 5%;
   opacity: 0.75;
-  width: 250px;
   transition: opacity 0.3s;
 }
 
@@ -277,7 +289,7 @@ footer p {
 
 .container {
   margin: 0 auto;
-  width: 1000px;
+  width: 920px;
 }
 
 /* IDs to create split-text effect in header */
@@ -289,7 +301,7 @@ footer p {
 }
 
 #james {
-  color: var(--accent-clr-2);
+  color: var(--primary-clr);
   clip-path: inset(50% -1% -5% -15%);
   left: 60px;
   top: 17px;
@@ -307,7 +319,7 @@ footer p {
 }
 
 #web {
-  color: var(--accent-clr-2);
+  color: var(--primary-clr);
   clip-path: inset(0% 0% 27% 0%);
   top: 0px;
   left: 205px;
@@ -318,4 +330,105 @@ footer p {
   clip-path: inset(52% -1% -5% -15%);
   left: 248px;
   top: 17px;
+}
+
+/* Media queries */
+
+/* Styles for medium-sized screens of < 980px */
+
+@media screen and (max-width: 980px) {
+  header div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  header div h1 {
+    margin-top: 45px;
+    margin-bottom: -45px;
+  }
+
+  header div nav ul li {
+    padding-right: 0px;
+  }
+
+  .container {
+    width: 95vw;
+  }
+
+  #projects article {
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(5, 300px);
+  }
+
+  .big-project-image {
+    width: 100%;
+  }
+
+  .big-project-caption {
+    width: 613px;
+  }
+
+  .smaller-project-image {
+    width: 100%;
+  }
+
+  .smaller-project-caption {
+    width: 298px;
+  }
+}
+
+/* Styles for smaller screens like tablets < 768px */
+
+@media screen and (max-width: 784px) {
+  #projects article {
+    grid-template-columns: repeat(2, 200px);
+    grid-template-rows: repeat(5, 200px);
+  }
+
+  .big-project-caption {
+    width: 413px;
+  }
+
+  .smaller-project-caption {
+    font-size: 0.8rem;
+    width: 198px;
+  }
+}
+
+/* Styles for very small screens, mobile phones < 575px */
+
+@media screen and (max-width: 575px) {
+  header div nav ul li {
+    margin-top: 15px;
+    font-size: 1.5rem;
+  }
+
+  .side-wall {
+    width: 0;
+  }
+
+  #profile-image {
+    width: 150px;
+  }
+
+  #projects {
+    height: 900px;
+  }
+
+  #projects article {
+    grid-template-columns: repeat(2, 40%);
+    grid-template-rows: repeat(5, 13%);
+    grid-gap: 5px;
+  }
+
+  .big-project-caption {
+    width: 99.5%;
+  }
+
+  .smaller-project-caption {
+    width: 99%;
+    bottom: 150px;
+  }
 }

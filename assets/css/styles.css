@@ -80,7 +80,7 @@ header nav ul li {
 }
 
 header nav ul li a {
-  color: var(--primary-clr);
+  color: var(--primary-clr) !important;
   text-decoration: none;
   text-shadow: 1px 1px var(--primary-clr);
   transition: opacity 0.2s;

@@ -100,6 +100,10 @@ header h1:nth-child(2) {
   white-space: nowrap;
 }
 
+header h3 {
+  display: none;
+}
+
 /* Main and general section styles */
 
 main {
@@ -112,6 +116,10 @@ section {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 20px 0 80px 0;
+}
+
+section:first-child {
+  margin-top: 50px;
 }
 
 section h2 {
@@ -412,10 +420,20 @@ header h1 span {
     visibility: visible;
   }
 
+  header h3 {
+    display: inline;
+    margin: -28px 0 0 135px;
+  }
+
   header nav ul li {
     font-size: 1.4rem;
-    margin-top: -15px;
+    margin-top: -10px;
     padding-right: 3px;
+  }
+
+  header nav ul li:not(:nth-child(4)):after {
+    content: ' |';
+    color: var(--primary-clr);
   }
 
   section {

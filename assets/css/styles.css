@@ -59,54 +59,54 @@ p {
 /* Header styles */
 /* See IDs below for split-text effect */
 
-header {
+header .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0px 0px 50px 30px;
 }
 
-header h1 {
+header .container h1 {
   font-size: 3.5rem;
   position: relative;
   top: -45px;
 }
 
-header nav ul {
+header .container nav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
   list-style: none;
 }
 
-header nav ul li {
+header .container nav ul li {
   display: inline;
   font-size: 2rem;
   padding-right: 15px;
 }
 
-header nav ul li a {
+header .container nav ul li a {
   color: var(--primary-clr) !important;
   text-decoration: none;
   text-shadow: 1px 1px var(--primary-clr);
   transition: opacity 0.2s;
 }
 
-header nav ul li a:hover {
+header .container nav ul li a:hover {
   opacity: 0.5;
   text-decoration: none;
 }
 
 /* Invisible h1 to enforce spacing against navbar */
 
-header h1:nth-child(2) {
+header .container h1:nth-child(2) {
   display: inline-block;
   position: relative;
   visibility: hidden;
   white-space: nowrap;
 }
 
-header h3 {
+header .container h3 {
   display: none;
 }
 
@@ -116,34 +116,35 @@ main {
   padding: 60px 0 100px 0;
 }
 
-section {
+section .container {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 20px 0 80px 0;
+  padding: 50px 0 80px 0;
 }
 
-section:first-child {
+section .container:first-child {
   margin-top: 50px;
 }
 
-section h2 {
+section .container h2 {
   flex: 1.3;
   text-shadow: 2px 2px black;
 }
 
-section article {
+section .container article {
   flex: 10;
 }
 
 /* Horizontal rule above each section */
 
-section:before {
+section .container:before {
   content: '';
-  background-color: var(--accent-clr);
+  background-color: var(--secondary-clr);
+  border-radius: 80%;
   bottom: 14px;
-  height: 1px;
+  height: 4px;
   margin: 0 auto;
   position: relative;
   width: 100%;
@@ -152,9 +153,10 @@ section:before {
 /* Vertical rule between each section h2 and article */
 
 .side-wall {
-  background-color: var(--accent-clr);
+  background-color: var(--secondary-clr);
+  border-radius: 80%;
   margin: -40px 15px;
-  width: 1px;
+  width: 4px;
   height: 250px;
 }
 
@@ -171,11 +173,12 @@ section:before {
 
 /* Projects section styles with grid template */
 
-#projects article {
+#projects .container article {
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(3, 250px);
   grid-template-rows: repeat(3, 250px);
+  justify-content: center;
 }
 
 .big-project {
@@ -234,7 +237,7 @@ section:before {
 
 #contact article ul li {
   display: flex;
-  margin: 0 0 15px 20px;
+  margin: 0 0 15px 100px;
 }
 
 #contact article ul li span:first-child {
@@ -296,7 +299,7 @@ footer p {
 
 /* Create split-text effect in header */
 
-header h1 span {
+header .container h1 span {
   position: absolute;
 }
 
@@ -347,23 +350,23 @@ header h1 span {
 /* Styles for medium-sized screens of < 980px */
 
 @media screen and (max-width: 1060px) {
-  header {
+  header .container {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     justify-content: flex-end;
   }
 
-  header h1 {
+  header .container h1 {
     margin: 27px 0 -37px 0;
   }
 
-  header nav ul li {
+  header .container nav ul li {
     margin-top: 5px;
     padding-right: 15px;
   }
 
-  header nav ul li a {
+  header .container nav ul li a {
     color: black;
   }
 
@@ -373,8 +376,8 @@ header h1 span {
 
   /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
 
-  #projects article {
-    grid-gap: 5px 20px;
+  #projects .container article {
+    grid-gap: 20px;
     grid-template-columns: repeat(2, 45%);
     grid-template-rows: repeat(5, 16%);
     margin-bottom: -300px;
@@ -423,11 +426,11 @@ header h1 span {
     font-size: 1rem;
   }
 
-  header {
+  header .container {
     padding: 25px 0 0 0;
   }
 
-  header h1 span {
+  header .container h1 span {
     display: none;
   }
 
@@ -435,33 +438,33 @@ header h1 span {
     display: none;
   }
 
-  header h1:nth-child(2) {
+  header .container h1:nth-child(2) {
     color: var(--primary-clr);
     visibility: visible;
   }
 
-  header h3 {
+  header .container h3 {
     display: inline;
     margin: -28px 0 0 135px;
   }
 
-  header nav ul li {
+  header .container nav ul li {
     font-size: 1.4rem;
     margin-top: -10px;
     padding-right: 3px;
   }
 
-  header nav ul li:not(:nth-child(4)):after {
+  header .container nav ul li:not(:nth-child(4)):after {
     content: ' |';
     color: var(--primary-clr);
   }
 
-  section {
+  section .container {
     display: flex;
     flex-direction: column;
   }
 
-  section h2 {
+  section .container h2 {
     margin: 0 auto 25px auto;
   }
 
@@ -475,7 +478,7 @@ header h1 span {
 
   /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
 
-  #projects article {
+  #projects .container article {
     grid-template-columns: repeat(2, 43%);
     grid-template-rows: repeat(5, 13%);
     grid-gap: 35px 20px;

@@ -1,8 +1,9 @@
 /* Variables */
 
 :root {
-  --secondary-clr: #f0a500;
-  --primary-clr: #082032;
+  --secondary-clr: #fff;
+  --primary-clr: #5a5a5a;
+  --accent-clr: #d3c124;
 }
 
 /* Universal reset */
@@ -22,9 +23,9 @@ html {
 body {
   background: var(--primary-clr);
   background: linear-gradient(
-    -178deg,
+    -180deg,
     var(--secondary-clr) 0%,
-    var(--primary-clr) 5%,
+    var(--primary-clr) 3%,
     var(--primary-clr) 95%,
     var(--secondary-clr) 100%
   );
@@ -36,8 +37,13 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: #830b0b;
+  text-decoration: none;
+}
+
 a:not(.project-link) {
-  color: inherit;
+  color: var(--accent-clr);
   opacity: 1;
   transition: opacity 0.2s;
 }
@@ -57,7 +63,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0px 50px 30px;
+  padding: 0px 0px 50px 30px;
 }
 
 header h1 {
@@ -135,7 +141,7 @@ section article {
 
 section:before {
   content: '';
-  background-color: var(--secondary-clr);
+  background-color: var(--accent-clr);
   bottom: 14px;
   height: 1px;
   margin: 0 auto;
@@ -146,7 +152,7 @@ section:before {
 /* Vertical rule between each section h2 and article */
 
 .side-wall {
-  background-color: var(--secondary-clr);
+  background-color: var(--accent-clr);
   margin: -40px 15px;
   width: 1px;
   height: 250px;
@@ -155,7 +161,7 @@ section:before {
 /* About section styles */
 
 #profile-image {
-  border: solid 1px var(--secondary-clr);
+  border: solid 1px var(--accent-clr);
   border-radius: 3%;
   display: inline;
   float: right;
@@ -180,7 +186,7 @@ section:before {
 }
 
 .big-project-image {
-  border: solid 1px var(--secondary-clr);
+  border: solid 1px var(--accent-clr);
   border-radius: 1%;
   width: 100%;
 }
@@ -205,7 +211,7 @@ section:before {
 }
 
 .smaller-project-image {
-  border: solid 1px var(--secondary-clr);
+  border: solid 1px var(--accent-clr);
   border-radius: 3%;
   width: 100%;
 }
@@ -244,11 +250,12 @@ section:before {
 /* Resume styles */
 
 .center-text {
+  padding-top: 10px;
   text-align: center;
 }
 
-.download-button {
-  background-color: var(--secondary-clr);
+.accent-button {
+  background-color: var(--accent-clr);
   border: black 1px solid;
   border-radius: 5px;
   color: var(--primary-clr) !important;
@@ -284,7 +291,7 @@ footer p {
 
 .container {
   margin: 0 auto;
-  width: 920px;
+  width: 1050px;
 }
 
 /* Create split-text effect in header */
@@ -339,7 +346,7 @@ header h1 span {
 
 /* Styles for medium-sized screens of < 980px */
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1060px) {
   header {
     display: flex;
     align-items: flex-start;
@@ -387,6 +394,10 @@ header h1 span {
 
   .smaller-project-caption {
     width: 99%;
+  }
+
+  #resume article {
+    padding: 0 10px;
   }
 }
 

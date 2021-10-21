@@ -205,7 +205,7 @@ section .container:before {
 }
 
 #projects article div a img {
-  filter: grayscale(50%);
+  filter: grayscale(70%);
   transition: filter 0.2s;
 }
 

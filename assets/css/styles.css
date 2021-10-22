@@ -135,6 +135,7 @@ section .container h2 {
 
 section .container article {
   flex: 10;
+  padding: 0 10px;
 }
 
 /* Horizontal rule above each section */
@@ -398,10 +399,6 @@ header .container h1 span {
   .smaller-project-caption {
     width: 99%;
   }
-
-  #resume article {
-    padding: 0 10px;
-  }
 }
 
 /* Styles for smaller screens like tablets < 768px */
@@ -427,7 +424,7 @@ header .container h1 span {
   }
 
   header .container {
-    padding: 25px 0 0 0;
+    padding: 25px 0 0 10px;
   }
 
   header .container h1 span {

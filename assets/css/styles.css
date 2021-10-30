@@ -283,6 +283,7 @@ header nav ul li:hover::before {
 
 #contact article ul li {
   display: flex;
+  font-size: 1.2rem;
   margin: 0 0 15px 15px;
 }
 
@@ -398,13 +399,18 @@ footer p {
   }
 
   /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
-
   #projects .container article {
     display: flex;
     flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
   }
 
   .big-project {
     margin-bottom: -80px;
+  }
+
+  #contact article {
+    padding: 20px;
   }
 }

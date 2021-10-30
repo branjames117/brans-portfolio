@@ -26,17 +26,41 @@ body::after {
     ),
     url('../images/pexels-francesco-ungaro-998641.jpg');
   background-position: center;
-  background-size: cover;
+  background-size: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   z-index: -1;
-  height: 75%;
+  height: 35%;
 }
 
 a {
   color: white;
   text-decoration: none;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.container h2 {
+  margin: 150px 0 20px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.container a {
+  color: rgb(156, 156, 156);
+}
+
+.container a:hover {
+  color: grey;
+  text-decoration: underline;
 }
 
 /* Header section with nav bar */
@@ -169,15 +193,171 @@ header nav ul li:hover::before {
 
 /* About section */
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 0 auto;
-  max-width: 1024px;
+/* Projects section */
+
+#projects .container article {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, 225px);
+  grid-template-rows: repeat(3, 225px);
+  justify-content: center;
 }
 
-#about h2 {
-  font-size: 2.2rem;
+.big-project {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.big-project-image {
+  border: solid 1px var(--accent-clr);
+  border-radius: 1%;
+  width: 100%;
+}
+
+.big-project-caption {
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 1.1rem;
+  position: relative;
+  bottom: 120px;
+  padding: 5px 10px;
+}
+
+#projects article div a img {
+  filter: grayscale(70%);
+  transition: filter 0.2s;
+}
+
+#projects article div a img:hover {
+  filter: grayscale(0%);
+}
+
+.smaller-project-image {
+  border: solid 1px var(--accent-clr);
+  border-radius: 3%;
+  width: 100%;
+}
+
+.smaller-project-caption {
+  background-color: rgba(0, 0, 0, 0.85);
+  font-size: 1rem;
+  position: relative;
+  bottom: 115px;
+  padding: 5px 10px;
+}
+
+/* Contact section styles */
+
+#contact article {
+  border: 1px solid white;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px 0;
+  min-width: 90%;
+}
+
+#contact article ul {
+  list-style-type: none;
+}
+
+#contact article ul li {
+  display: flex;
+  margin: 0 0 15px 15px;
+}
+
+#contact article ul li span:first-child {
+  font-size: 2rem;
+  width: 50px;
+}
+
+#contact article ul li a,
+#contact article ul li span:not(:first-child) {
+  margin-top: 10px;
+}
+
+/* Resume styles */
+
+.center-text {
   text-align: center;
+}
+
+.accent-button {
+  background-color: var(--accent-clr);
+  border: white 1px solid;
+  border-radius: 5px;
+  color: var(--primary-clr) !important;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.resume-header {
+  margin: 0px 0 10px 0;
+}
+
+#resume h3 {
+  font-size: 2rem;
+  margin-top: 30px;
+}
+
+#resume article ul {
+  margin-left: 45px;
+}
+
+#resume article h4 {
+  margin-top: 15px;
+}
+
+/* Footer styles */
+
+footer {
+  padding: 150px 40px 10px 40px;
+}
+
+footer p {
+  color: var(--primary-clr);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+/* Styles for medium-sized screens of < 980px */
+
+@media screen and (max-width: 1060px) {
+  .container {
+    width: 85vw;
+  }
+
+  /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
+
+  #projects .container article {
+    grid-gap: 0px 25px;
+    grid-template-columns: repeat(2, 45%);
+    grid-template-rows: repeat(5, 16%);
+  }
+
+  .smaller-project {
+    margin-bottom: -80px;
+  }
+}
+
+/* Styles for very small screens, mobile phones < 575px */
+
+@media screen and (max-width: 575px) {
+  body {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 90vw;
+  }
+
+  /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
+
+  #projects .container article {
+    grid-template-columns: repeat(2, 43%);
+    grid-template-rows: repeat(5, 13%);
+    grid-gap: 35px 20px;
+    justify-content: center;
+    margin-bottom: -150px;
+  }
 }

@@ -8,6 +8,10 @@
 
 /* General selectors */
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: black;
   position: relative;
@@ -266,11 +270,11 @@ header nav ul li:hover::before {
 }
 
 #contact article {
-  border: 1px solid white;
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
-  padding: 20px 0;
-  min-width: 90%;
+  padding: 20px 100px;
+  position: relative;
 }
 
 #contact article ul {
@@ -347,7 +351,7 @@ footer p {
 
   #projects .container article {
     grid-gap: 0px 25px;
-    grid-template-columns: repeat(2, 45%);
+    grid-template-columns: repeat(2, 35%);
     grid-template-rows: repeat(5, 16%);
   }
 

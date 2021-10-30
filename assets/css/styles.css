@@ -22,10 +22,10 @@ body::after {
   background-image: linear-gradient(
       to bottom,
       rgba(245, 246, 252, 0) 0%,
-      rgba(0, 0, 0, 1) 75%
+      rgba(0, 0, 0, 1) 45%
     ),
     url('../images/pexels-francesco-ungaro-998641.jpg');
-  background-position: center;
+  background-position: top;
   background-size: 100%;
   width: 100%;
   position: absolute;
@@ -135,13 +135,13 @@ header nav ul li:hover::before {
 
 #secret1 {
   /* node */
-  top: 80px;
+  top: 50px;
   left: 30%;
 }
 
 #secret2 {
   /* next */
-  top: 120px;
+  top: 155px;
   left: 70%;
 }
 
@@ -153,8 +153,8 @@ header nav ul li:hover::before {
 
 #secret4 {
   /* js */
-  top: 271px;
-  left: 63%;
+  top: 241px;
+  left: 65%;
 }
 
 #secret5 {
@@ -170,15 +170,27 @@ header nav ul li:hover::before {
 }
 
 #secret7 {
-  /* nosql */
-  top: 620px;
+  /* mongodb */
+  top: 580px;
   right: 20%;
 }
 
 #secret8 {
   /* python */
-  top: 640px;
+  top: 660px;
   left: 20%;
+}
+
+#secret9 {
+  /* uiux */
+  top: 540px;
+  left: 23%;
+}
+
+#secret10 {
+  /* sql */
+  top: 660px;
+  right: 34%;
 }
 
 #hero h1 {
@@ -248,6 +260,10 @@ header nav ul li:hover::before {
 }
 
 /* Contact section styles */
+
+#contact {
+  margin-top: -65px;
+}
 
 #contact article {
   border: 1px solid white;
@@ -320,7 +336,7 @@ footer p {
   text-align: center;
 }
 
-/* Styles for medium-sized screens of < 980px */
+/* Styles for medium-sized screens of < 1060px */
 
 @media screen and (max-width: 1060px) {
   .container {
@@ -340,11 +356,37 @@ footer p {
   }
 }
 
+/* Drop the secret texts at this size */
+@media screen and (max-width: 974px) {
+  .secret {
+    display: none;
+  }
+}
+
 /* Styles for very small screens, mobile phones < 575px */
 
 @media screen and (max-width: 575px) {
   body {
     font-size: 1rem;
+  }
+
+  header nav ul li {
+    font-size: 1.5rem;
+    position: relative;
+  }
+
+  #hero {
+    min-height: 600px;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero img {
+    border: 5px white solid;
+    border-radius: 50%;
+    width: 300px;
   }
 
   .container {
@@ -354,10 +396,11 @@ footer p {
   /* Issue: A negative margin-bottom is the only way I've been able to eliminate the gap beneath the projects grid map? */
 
   #projects .container article {
-    grid-template-columns: repeat(2, 43%);
-    grid-template-rows: repeat(5, 13%);
-    grid-gap: 35px 20px;
-    justify-content: center;
-    margin-bottom: -150px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .big-project {
+    margin-bottom: -80px;
   }
 }

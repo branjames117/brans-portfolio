@@ -209,8 +209,24 @@ header nav ul li:hover::before {
 
 /* Reveal sections */
 
-section.hidden {
+section {
   opacity: 0;
+}
+
+section.revealed {
+  opacity: 1;
+  animation: reveal 1s ease-out;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 /* Projects section */

@@ -1,5 +1,4 @@
 let starNodes = document.querySelectorAll('.secret')
-console.log(starNodes)
 
 starNodes.forEach((starNode) => {
   setInterval(() => {
@@ -12,10 +11,23 @@ starNodes.forEach((starNode) => {
 
 /* to do - add fade-ins for the sections with intersection observor */
 
-let aboutSection = document.querySelector('#about')
+const sections = document.querySelectorAll('section')
 
-let projectsSection = document.querySelector('#projects')
+const options = {
+  root: null,
+  threshold: 0,
+  rootMargin: '-350px',
+}
 
-let contactSection = document.querySelector('#contact')
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed')
+      observer.unobserve(entry.target)
+    }
+  })
+}, options)
 
-let resumeSection = document.querySelector('#resume')
+sections.forEach((section) => {
+  observer.observe(section)
+})

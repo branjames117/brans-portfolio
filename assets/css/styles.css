@@ -209,12 +209,7 @@ header nav ul li:hover::before {
 
 /* Reveal sections */
 
-section {
-  opacity: 0;
-}
-
 section.revealed {
-  opacity: 1;
   animation: reveal 1s ease-out;
 }
 

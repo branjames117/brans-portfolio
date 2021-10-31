@@ -12,16 +12,22 @@ starNodes.forEach((starNode) => {
 /* to do - add fade-ins for the sections with intersection observor */
 
 const sections = document.querySelectorAll('section')
+sections.forEach((section) => {
+  console.log('Hiding section')
+  section.style.opacity = '0'
+})
 
 const options = {
   root: null,
   threshold: 0,
-  rootMargin: '-350px',
+  rootMargin: '0px',
 }
 
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
+      console.log('Revealing section')
+      entry.target.style = ''
       entry.target.classList.add('revealed')
       observer.unobserve(entry.target)
     }

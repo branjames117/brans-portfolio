@@ -133,7 +133,7 @@ header nav ul li:hover::before {
   transition: color 0.5s linear;
 }
 
-#hero .secret:hover {
+#hero .secret.brighter {
   color: white;
 }
 
@@ -207,7 +207,11 @@ header nav ul li:hover::before {
   width: 350px;
 }
 
-/* About section */
+/* Reveal sections */
+
+section.hidden {
+  opacity: 0;
+}
 
 /* Projects section */
 

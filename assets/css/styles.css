@@ -30,6 +30,7 @@ body::after {
     ),
     url('../images/pexels-francesco-ungaro-998641.jpg');
   background-position: top;
+  background-repeat: no-repeat;
   background-size: 100%;
   width: 100%;
   position: absolute;
@@ -223,6 +224,8 @@ section.revealed {
     transform: translateY(0px);
   }
 }
+
+/* About section */
 
 /* Projects section */
 

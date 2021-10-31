@@ -19,7 +19,7 @@ sections.forEach((section) => {
 
 const options = {
   root: null,
-  threshold: 0,
+  threshold: 0.1,
   rootMargin: '0px',
 }
 

@@ -129,7 +129,7 @@ header nav ul li:hover::before {
 #hero .secret {
   color: rgb(20, 20, 20);
   cursor: default;
-  font-size: 3rem;
+  font-size: 2rem;
   position: absolute;
   transition: color 0.5s linear;
 }
@@ -147,7 +147,7 @@ header nav ul li:hover::before {
 #secret2 {
   /* next */
   top: 155px;
-  left: 70%;
+  left: 75%;
 }
 
 #secret3 {
@@ -194,7 +194,7 @@ header nav ul li:hover::before {
 
 #secret10 {
   /* sql */
-  top: 660px;
+  top: 690px;
   right: 34%;
 }
 
